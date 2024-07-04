@@ -8,7 +8,11 @@ API using Node + TS + Express
     ```bash
     npm i
     ```
-2. Start the application:
+2. Add your mongoDB data in a .env file following the template
+    ```bash
+    check <.env.template> file and add your config from your MongoDB database
+    ```
+3. Start the application:
     ```bash
     npm run dev
     ```
