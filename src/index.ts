@@ -1,8 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv'
 import colors from 'colors'
-import {  getAllItems, findItemByID } from "./services/items.services";
 import { db } from './config/db';
+
+import itemsRoutes from './routes/itemsRoutes'
 
 //allow reading enviornment variables
 dotenv.config();
@@ -14,9 +15,7 @@ app.use(express.json()); //this allow to read the req.body as a json
 db();
 
 //routes example
-app.get('/api/menu', getAllItems);
-
-app.get('/api/menu/:id', findItemByID)
+app.use('/api/menu', itemsRoutes);
 
 
 //define port
