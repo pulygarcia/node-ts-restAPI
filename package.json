@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "dev": "nodemon",
     "seed:import": "ts-node src/data/seed.ts --import",
-    "seed:destroy": "ts-node data/seed.ts --destroy"
+    "seed:destroy": "ts-node src/data/seed.ts --destroy"
   },
   "author": "pulygarcia",
   "license": "ISC",
