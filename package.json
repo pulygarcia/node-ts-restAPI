@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "seed:import": "ts-node src/data/seed.ts --import",
+    "seed:destroy": "ts-node data/seed.ts --destroy"
   },
   "author": "pulygarcia",
   "license": "ISC",
