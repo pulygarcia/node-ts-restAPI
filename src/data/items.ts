@@ -1,4 +1,4 @@
-type Category = 'Merienda' | 'Comida' | 'Postre' | 'Bebida' | 'Entrada';
+type Category = 'Snack' | 'Meal' | 'Dessert' | 'Drink' | 'Appetizer';
 
 export interface MenuItem {
   name: string;
@@ -8,272 +8,273 @@ export interface MenuItem {
 }
 
 export const items: MenuItem[] = [
-  // Meriendas
+  // Snacks
   {
     name: 'Medialunas',
-    description: 'Croissants argentinos, dulces o saladas.',
+    description: 'Argentinian croissants, sweet or savory.',
     price: 1.50,
-    category: 'Merienda'
+    category: 'Snack'
   },
   {
     name: 'Tostadas con Dulce de Leche',
-    description: 'Tostadas servidas con dulce de leche.',
+    description: 'Toasts served with dulce de leche.',
     price: 2.00,
-    category: 'Merienda'
+    category: 'Snack'
   },
   {
     name: 'Facturas',
-    description: 'Variedad de bollos y pasteles argentinos.',
+    description: 'Variety of Argentinian buns and pastries.',
     price: 2.50,
-    category: 'Merienda'
+    category: 'Snack'
   },
   {
     name: 'Sándwich de Miga',
-    description: 'Sándwiches de pan de miga con diferentes rellenos.',
+    description: 'Crustless sandwiches with various fillings.',
     price: 3.00,
-    category: 'Merienda'
+    category: 'Snack'
   },
   {
     name: 'Churros con Chocolate',
-    description: 'Churros fritos servidos con chocolate caliente.',
+    description: 'Fried churros served with hot chocolate.',
     price: 3.00,
-    category: 'Merienda'
+    category: 'Snack'
   },
   
-  // Platos de Comida
+  // Meals
   {
     name: 'Empanadas',
-    description: 'Masa rellena con carne, cebolla, huevo y aceitunas.',
+    description: 'Dough filled with meat, onion, egg, and olives.',
     price: 2.50,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Asado',
-    description: 'Carne de res asada a la parrilla, servida con chimichurri.',
+    description: 'Grilled beef served with chimichurri.',
     price: 15.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Milanesa',
-    description: 'Carne empanada y frita, servida con papas fritas.',
+    description: 'Breaded and fried meat served with fries.',
     price: 10.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Choripán',
-    description: 'Chorizo a la parrilla servido en pan con chimichurri.',
+    description: 'Grilled sausage served in a bread roll with chimichurri.',
     price: 5.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Provoleta',
-    description: 'Queso provolone a la parrilla con especias.',
+    description: 'Grilled provolone cheese with spices.',
     price: 7.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Locro',
-    description: 'Guiso de maíz, porotos, chorizo, panceta y carne de res.',
+    description: 'Stew of corn, beans, sausage, bacon, and beef.',
     price: 12.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Humita en Chala',
-    description: 'Puré de maíz y zapallo envuelto en hojas de maíz.',
+    description: 'Corn and pumpkin puree wrapped in corn husks.',
     price: 8.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Lomo a la Parrilla',
-    description: 'Filete de lomo asado a la parrilla con guarnición.',
+    description: 'Grilled tenderloin steak with garnish.',
     price: 18.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Pizza a la Piedra',
-    description: 'Pizza cocida en horno de piedra con mozzarella y tomate.',
+    description: 'Stone-baked pizza with mozzarella and tomato.',
     price: 10.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Bife de Chorizo',
-    description: 'Corte de carne asado a la parrilla.',
+    description: 'Grilled beef sirloin steak.',
     price: 20.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Pollo al Disco',
-    description: 'Pollo cocido en disco de arado con verduras.',
+    description: 'Chicken cooked in a plow disk with vegetables.',
     price: 14.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Sopa Paraguaya',
-    description: 'Tarta de maíz y queso.',
+    description: 'Corn and cheese pie.',
     price: 6.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Guiso de Lentejas',
-    description: 'Guiso de lentejas con chorizo y verduras.',
+    description: 'Lentil stew with sausage and vegetables.',
     price: 9.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Matambre a la Pizza',
-    description: 'Matambre de res cubierto con salsa de tomate y queso.',
+    description: 'Flank steak covered with tomato sauce and cheese.',
     price: 12.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   {
     name: 'Pastel de Papas',
-    description: 'Pastel de carne cubierto con puré de papas.',
+    description: 'Meat pie topped with mashed potatoes.',
     price: 10.00,
-    category: 'Comida'
+    category: 'Meal'
   },
   
-  // Postres
+  // Desserts
   {
     name: 'Dulce de Leche Pancakes',
-    description: 'Panqueques rellenos de dulce de leche.',
+    description: 'Pancakes filled with dulce de leche.',
     price: 4.00,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Alfajores',
-    description: 'Galletas rellenas de dulce de leche y cubiertas de chocolate.',
+    description: 'Cookies filled with dulce de leche and coated in chocolate.',
     price: 3.00,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Flan con Dulce de Leche',
-    description: 'Flan casero acompañado de dulce de leche.',
+    description: 'Homemade flan served with dulce de leche.',
     price: 5.00,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Tarta de Ricota',
-    description: 'Tarta rellena de ricota dulce.',
+    description: 'Pie filled with sweet ricotta.',
     price: 4.50,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Helado Artesanal',
-    description: 'Helado hecho en casa con sabores variados.',
+    description: 'Homemade ice cream with various flavors.',
     price: 3.50,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Chocotorta',
-    description: 'Tarta de galletas de chocolate y crema de dulce de leche.',
+    description: 'Cake made with chocolate cookies and dulce de leche cream.',
     price: 6.00,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Pastelitos',
-    description: 'Masa frita rellena de dulce de membrillo o batata.',
+    description: 'Fried dough filled with quince or sweet potato paste.',
     price: 2.50,
-    category: 'Postre'
+    category: 'Dessert'
   },
   {
     name: 'Queso y Dulce',
-    description: 'Postre simple de queso fresco y dulce de membrillo.',
+    description: 'Simple dessert of fresh cheese and quince paste.',
     price: 3.00,
-    category: 'Postre'
+    category: 'Dessert'
   },
   
-  // Bebidas
+  // Drinks
   {
     name: 'Malbec',
-    description: 'Vino tinto argentino, famoso en todo el mundo.',
+    description: 'Argentinian red wine, famous worldwide.',
     price: 12.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Fernet con Coca',
-    description: 'Licor de hierbas mezclado con Coca Cola.',
+    description: 'Herbal liqueur mixed with Coca-Cola.',
     price: 6.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Mate',
-    description: 'Infusión tradicional argentina de yerba mate.',
+    description: 'Traditional Argentinian infusion of yerba mate.',
     price: 3.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Submarino',
-    description: 'Leche caliente con una barra de chocolate derretida.',
+    description: 'Hot milk with a melted chocolate bar.',
     price: 4.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Café con Leche',
-    description: 'Café expreso mezclado con leche caliente.',
+    description: 'Espresso mixed with hot milk.',
     price: 2.50,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Limonada Casera',
-    description: 'Limonada fresca hecha en casa.',
+    description: 'Fresh homemade lemonade.',
     price: 2.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Té con Leche',
-    description: 'Té negro mezclado con leche caliente.',
+    description: 'Black tea mixed with hot milk.',
     price: 2.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Gaseosa',
-    description: 'Variedad de bebidas gaseosas.',
+    description: 'Variety of soft drinks.',
     price: 1.50,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Agua Mineral',
-    description: 'Agua mineral natural o con gas.',
+    description: 'Natural or sparkling mineral water.',
     price: 1.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   {
     name: 'Cerveza Artesanal',
-    description: 'Variedad de cervezas artesanales locales.',
+    description: 'Variety of local craft beers.',
     price: 5.00,
-    category: 'Bebida'
+    category: 'Drink'
   },
   
-  // Entradas
+  // Appetizers
   {
     name: 'Picada',
-    description: 'Selección de fiambres, quesos y aceitunas.',
+    description: 'Selection of cold cuts, cheeses, and olives.',
     price: 10.00,
-    category: 'Entrada'
+    category: 'Appetizer'
   },
   {
     name: 'Tortilla de Papas',
-    description: 'Tortilla de papas tradicional.',
+    description: 'Traditional potato omelette.',
     price: 5.00,
-    category: 'Entrada'
+    category: 'Appetizer'
   },
   {
     name: 'Provoleta a la Parrilla',
-    description: 'Queso provolone a la parrilla con orégano.',
+    description: 'Grilled provolone cheese with oregano.',
     price: 7.00,
-    category: 'Entrada'
+    category: 'Appetizer'
   },
   {
     name: 'Calamares a la Romana',
-    description: 'Anillas de calamar fritas con limón.',
+    description: 'Fried squid rings with lemon.',
     price: 8.00,
-    category: 'Entrada'
+    category: 'Appetizer'
   },
   {
     name: 'Bruschettas',
-    description: 'Pan tostado con tomate, ajo y albahaca.',
+    description: 'Toasted bread with tomato, garlic, and basil.',
     price: 4.50,
-    category: 'Entrada'
+    category: 'Appetizer'
   }
 ];
+
 
