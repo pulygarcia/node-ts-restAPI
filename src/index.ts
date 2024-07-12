@@ -16,7 +16,7 @@ app.use(express.json()); //this allow to read the req.body as a json
 db();
 
 //Cors config
-const whiteList = process.argv[2] === '--postman' ? [process.env.FRONTEND_URL, undefined] : [process.env.FRONTEND_URL];
+const whiteList = process.argv[1] === '--postman' ? [process.env.FRONTEND_URL, undefined] : [process.env.FRONTEND_URL];
 
 // Define the type for the origin callback function
 type OriginCallback = (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => void; //allow is an optional parameter.
