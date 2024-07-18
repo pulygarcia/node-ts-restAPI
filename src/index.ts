@@ -1,10 +1,11 @@
 import express from 'express';
-import cors, { CorsOptions } from 'cors';
+import cors from 'cors';
 import dotenv from 'dotenv'
 import colors from 'colors'
 import { db } from './config/db';
 
 import itemsRoutes from './routes/itemsRoutes'
+import ticketsRoutes from './routes/ticketsRoutes'
 
 //allow reading enviornment variables
 dotenv.config();
@@ -16,28 +17,30 @@ app.use(express.json()); //this allow to read the req.body as a json
 db();
 
 //Cors config
-const whiteList = process.argv[1] === '--postman' ? [process.env.FRONTEND_URL, undefined] : [process.env.FRONTEND_URL];
+const whiteList = process.argv.includes('--postman') ? [process.env.FRONTEND_URL, undefined] : [process.env.FRONTEND_URL];
 
 // Define the type for the origin callback function
 type OriginCallback = (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => void; //allow is an optional parameter.
 
 // Define corsOptions with explicit types
 const corsOptions: { origin: OriginCallback } = {
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
+    //console.log(origin); // depurate
     if (whiteList.includes(origin)) {
-      // Allow the connection
+      // allow
       callback(null, true);
     } else {
-      // Don't allow
-      callback(new Error('Error de CORS'), false);
+      // dont allow
+      callback(new Error('CORS Error'), false);
     }
   }
 };
 
 app.use(cors(corsOptions));
 
-//routes example
+//routes
 app.use('/api/menu', itemsRoutes);
+app.use('/api/tickets', ticketsRoutes);
 
 
 //define port
