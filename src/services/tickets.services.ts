@@ -31,7 +31,7 @@ export const saveTicket = async (req:Request, res:Response) => {
 
 export const getTickets = async (req:Request, res:Response) => {
     try {
-        const tickets = await Tickets.find();
+        const tickets = await Tickets.find().sort({date: -1});
     
         return res.json(tickets);
 
