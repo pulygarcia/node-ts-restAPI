@@ -2,8 +2,7 @@ import mongoose, {Schema} from "mongoose";
 
 const ticketsSchema:Schema = new mongoose.Schema({
     items: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'items', // Reference to items model
+        type: Object,
         required: true
     }],
     date: {
