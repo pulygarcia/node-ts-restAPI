@@ -6,6 +6,7 @@ import { db } from './config/db';
 
 import itemsRoutes from './routes/itemsRoutes'
 import ticketsRoutes from './routes/ticketsRoutes'
+import authRoutes from './routes/authRoutes'
 
 //allow reading enviornment variables
 dotenv.config();
@@ -41,6 +42,7 @@ app.use(cors(corsOptions));
 //routes
 app.use('/api/menu', itemsRoutes);
 app.use('/api/tickets', ticketsRoutes);
+app.use('/api/auth', authRoutes);
 
 
 //define port
