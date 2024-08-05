@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import Users from '../models/user.model'
+import {createJWT} from '../lib/utils'
 
 
 export const registerUser = async (req:Request, res:Response) => {
@@ -78,5 +79,28 @@ export const verifyUser = async (req:Request, res:Response) => {
 
 
 export const login = async (req:Request, res:Response) => {
-    console.log('Login')
+    //Check if userName exists in DB
+    const user = await Users.findOne({userName: req.body.userName});
+    if(!user){
+        const error = new Error('User not found');
+
+        return res.status(401).json({
+            msg : error.message
+        })
+    }
+
+    //compare password input with hashed password, if correct, return token
+    if(await user.checkPassword(req.body.password)){
+        const jwt = createJWT(user._id.toString())
+        
+        res.json({
+            jwt
+        })
+    }else{
+        const error = new Error('Wrong password');
+
+        return res.status(401).json({
+            msg : error.message
+        })
+    }
 }
