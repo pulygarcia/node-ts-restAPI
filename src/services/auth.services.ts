@@ -104,3 +104,9 @@ export const login = async (req:Request, res:Response) => {
         })
     }
 }
+
+export const user = async (req:Request, res:Response) => {
+    res.json(
+        req.user
+    )
+}
