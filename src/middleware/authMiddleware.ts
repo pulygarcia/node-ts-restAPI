@@ -25,7 +25,7 @@ export const authMiddleware = async (req:Request, res:Response, next:NextFunctio
             //console.log(decoded);
 
             if (typeof decoded === 'string') {
-                throw new Error('Token no válido');
+                throw new Error('Invalid token');
             }
 
             req.user = await Users.findById(decoded.id).select(
@@ -36,13 +36,13 @@ export const authMiddleware = async (req:Request, res:Response, next:NextFunctio
             next();
 
         } catch {
-            const error = new Error('Token no válido');
+            const error = new Error('Invalid token');
             res.status(403).json({
                 msg: error.message
             })
         }
     }else{
-        const error = new Error('Token inexistente o no válido');
+        const error = new Error('Token not found or is not valid');
         res.status(403).json({
             msg: error.message
         })
