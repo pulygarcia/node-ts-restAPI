@@ -22,6 +22,10 @@ const staffMemberSchema:Schema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    active:{
+        type: Boolean,
+        default: true
+    }
 })
 
 const staffMember = mongoose.model('staffMember', staffMemberSchema);

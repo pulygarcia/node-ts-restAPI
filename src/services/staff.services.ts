@@ -54,6 +54,31 @@ export const getAllMembers = async (req:Request, res:Response) => {
     }
 }
 
+export const getMemberByID = async (req:Request, res:Response) => {
+    const id = req.params.id;
+    //validate OBJECT ID with mongoose
+    //TODO: move id validation to a helpers folder
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        const error = new Error('Invalid ID provided')
+
+        return res.status(400).json({
+            msg: error.message
+        })
+    }
+
+    //check if exists in db
+    const member = await StaffMembers.findById(id);
+    if(!member){
+        const error = new Error('Member not found')
+
+        return res.status(404).json({
+            msg: error.message
+        })
+    }
+
+    res.json(member);
+}
+
 export const modifyMember = async (req:Request, res:Response) => {
     const id = req.params.id;
 
@@ -82,6 +107,7 @@ export const modifyMember = async (req:Request, res:Response) => {
     member.salary = req.body.salary || member.salary;
     member.phoneNumber = req.body.phoneNumber || member.phoneNumber;
     member.adress = req.body.adress || member.adress;
+    member.active = req.body.active;
 
     //save it updated
     try {
