@@ -118,3 +118,34 @@ export const updateItem = async (req:Request, res:Response) => {
         })
     }
 }
+
+export const removeItem = async (req:Request, res:Response) => {
+    const id = req.params.id;
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        const error = new Error('Invalid ID provided')
+
+        return res.status(400).json({
+            msg: error.message
+        })
+    }
+
+    const item:any = await Items.findById(id);
+    if(!item){
+        const error = new Error('Item not found');
+
+        return res.status(404).json({
+            msg: error.message
+        })
+    }
+
+    try {
+        await item.deleteOne();
+
+        res.json({
+            msg: 'Deleted successfully'
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
